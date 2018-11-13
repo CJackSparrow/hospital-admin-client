@@ -1,22 +1,33 @@
-
-.content-header{
-    padding-top: 50px;
+.main-sidebar {
+  padding-top: 0px;
 }
 
-.top-title{
-    padding-top:50px;
-    font-size: 25px !important;
+.content-header {
+  padding-top: 50px;
+}
+
+.top-title {
+  padding-top: 50px;
+  font-size: 25px !important;
 }
 
 .add-button {
-    margin-top: 65px;
-    margin-right: 4px;
+  margin-top: 65px;
+  margin-right: 4px;
 }
 
 .search-box-tools li {
-    float: left;
+  float: left;
 }
 
-.btn-search{
-    height: 34px !important;
+.btn-search {
+  height: 34px !important;
+}
+
+.header-row{
+  height: 34px;
+}
+
+.paging-box>li>a{
+  padding: 7px 10px;
 }

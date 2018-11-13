@@ -7,18 +7,18 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +31,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-  <link rel="stylesheet" href="..\..\css\custom.css">
+  <link rel="stylesheet" href=".\css\custom.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -47,7 +47,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../../dist/img/avatar5.png" class="img-circle" alt="User Image">
+          <img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -59,13 +59,13 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="quanlythietbi.html">
+          <a href="pages/tables/quanlythietbi.html">
             <i class="fa fa-th"></i> <span>Quản lý thiết bị</span>
           </a>
       </li>
 
       <li>
-          <a href="../../quanlykhoa.html">
+          <a href="quanlykhoa.html">
             <i class="fa fa-th"></i> <span>Quản lý Khoa</span>
           </a>
       </li> 
@@ -78,35 +78,22 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="box-header">
-        <h3 class="box-title top-title">Danh sách thiết bị</h3>
+        <h3 class="box-title top-title">Danh sách khoa</h3>
         <div class="box-tools">
-          <button type="button" class="btn btn-info add-button">Thêm thiết bị</button>
+          <button type="button" class="btn btn-info add-button">Thêm khoa</button>
         </div>
       </div>
-    <!--bản ok-->
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <div class="row header-row">
-                <div class="col-sm-6">
-                  <ul class="pagination pagination-sm no-margin pull-left paging-box">
-                    <li class="paginate_button previous pre-page-device disabled" id="example1_previous">
-                      <a href="#" aria-controls="example1" data-dt-idx="0" onclick="onPrePage()">Trang sau</a>
-                    </li>
-
-                    <li class="paginate_button next next-page-device" id="example1_next">
-                      <a href="#" aria-controls="example1" data-dt-idx="7" onclick="onNextPage()">Trang tiếp</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-sm-6">
-                  <!--<div class="box-tools">-->
-                    <ul class="pagination pagination-sm no-margin pull-right search-box-tools">
+              <h3 class="box-title"></h3>
+              <div class="box-tools">
+                  <ul class="pagination pagination-sm no-margin pull-right search-box-tools">
                       <li>
-                        <div class="btn-group search-type">
                           <div class="btn-group search-type">
                             <div class="form-group">
                               <select class="form-control">
@@ -115,21 +102,17 @@
                               </select>
                             </div>
                           </div>
-                        </div>
                       </li>
                       <li>
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                          <input type="text" name="table_search" class="form-control pull-right btn-search" placeholder="Search">
-                          <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default btn-search"><i class="fa fa-search"></i></button>
-                          </div>
-                        </div>
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                              <input type="text" name="table_search" class="form-control pull-right btn-search" placeholder="Search">
+                              <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default btn-search"><i class="fa fa-search"></i></button>
+                              </div>
+                            </div>
                       </li>
-                    </ul>
-                  <!--</div>-->
-                </div>
+                  </ul> 
               </div>
-
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -143,11 +126,29 @@
                   <th>Sử dụng</th>
                   <th>Sửa chữa</th>
                   <th>Chi tiết</th>
-                  <th>Xóa</th>
                 </tr>
                 </thead>
-                <tbody class="list-device"></tbody>
-
+                <tbody>
+                <tr>
+                  <td>Trident</td>
+                  <td>Win 95+</td>
+                  <td> 4</td>
+                  <td>X</td>
+                  <td>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                    Xem
+                    </button>
+                  </td><td>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                      Xem
+                    </button>
+                  </td><td>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                      Xem
+                    </button>
+                  </td>
+                </tr>
+                
               </table>
             </div>
             <!-- /.box-body -->
@@ -163,7 +164,7 @@
 
       <!--start models -->
       <!--device detail modal-->
-      <div class="modal fade" id="modal-detail">
+      <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -286,8 +287,8 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
-              <button type="button" style="display:none" class="btn btn-primary">Lưu</button>
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="button" style="display:none" class="btn btn-primary">Save changes</button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -303,32 +304,31 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Lịch sử sử dụng</h4>
-
+              <h4 class="modal-title">Chi tiết thiết bị</h4>
             </div>
             <div class="modal-body">
-              <table id="use-history-table" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Ngày tháng</th>
-                  <th>Nội dung</th>
-                  <th>Người theo dõi</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                </tr>
-              </table>
+              <label>Ngày tháng</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
+
+              <label>Nội dung</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
+
+              <label>Người theo dõi</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
-              <button type="button" class="btn btn-info pull-left btn-info add-history-button" data-dismiss="modal">Thêm</button>
-              <button type="button" style="display:none" class="btn btn-primary">Lưu</button>
-
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="button" style="display:none" class="btn btn-primary">Save changes</button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -344,33 +344,37 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Lịch sử sửa chữa</h4>
+              <h4 class="modal-title">Chi tiết thiết bị</h4>
             </div>
             <div class="modal-body">
-              <table id="repair-history-table" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Ngày tháng</th>
-                  <th>Nội dung</th>
-                  <th>Level</th>
-                  <th>Người theo dõi</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td> Tao</td>
-                </tr>
+              <label>Ngày tháng</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
 
-              </table>
+              <label>Nội dung</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
+
+              <label>Level</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
+
+              <label>Người theo dõi</label>
+              <div class="input-group">
+                <input type="text" class="form-control" disabled>
+                <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+              </div>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
-              <button type="button" class="btn btn-info pull-left btn-info add-history-button" data-dismiss="modal">Thêm</button>
-              <button type="button" style="display:none" class="btn btn-primary">Lưu</button>
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="button" style="display:none" class="btn btn-primary">Save changes</button>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -590,22 +594,21 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
-<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<script src="../../js/device.js"></script>
-<script src="../../js/deviceAction.js"></script>
+<script src="dist/js/demo.js"></script>
+<script src="js/device.js"></script>
 <!-- page script -->
 <script>
   $(function () {
