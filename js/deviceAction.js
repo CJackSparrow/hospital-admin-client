@@ -260,7 +260,6 @@ function onOpenDeviceDetail(element){
 function showDeviceInfo(device){
   $('.device-id').val(device.id);
   $('.device-code').val(device.code);
-  $('.device-id').val(device.id);
   $('.device-name').val(device.name);
   $('.device-number').val(device.number);
   $('.device-madeIn').val(device.madeIn);
