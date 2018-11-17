@@ -99,7 +99,8 @@ function onAddUseHistory(){
 
 }
 
-$('.use-history-form').submit(()=>{
+$('.use-history-form').submit((e)=>{
+  e.preventDefault();
   console.log('onSubmitUseHistory');
   var deviceId = $('#use-history-table').val();
   var dateTime = convertDateToTimestamp($('.use-history-date').val());
@@ -186,7 +187,8 @@ function onAddRepairHistory(){
   $('.add-repair-history-button').hide();
 }
 
-$('.add-repair-form').submit(()=>{
+$('.add-repair-form').submit((e)=>{
+  e.preventDefault();
   console.log('submit repair history');
 
   var deviceId = $('#repair-history-table').val();
