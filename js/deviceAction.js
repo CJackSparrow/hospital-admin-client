@@ -322,7 +322,8 @@ function onSubmitAddDevice() {
   console.log("onSubmitAddDevice");
 }
 
-$('.device-form').submit(()=>{
+$('.device-form').submit((e)=>{
+  e.preventDefault();
   console.log("onSubmit");
 
   var device = JSON.stringify({
@@ -364,6 +365,7 @@ $('.device-form').submit(()=>{
   $.ajax(settings).done(function (response) {
     console.log("ajax");
     console.log(response);
+
     if(response.toUpperCase() == 'SUCCESS'){
       alert('Lưu thành công!');
       $('.btn-close-detail').click();
@@ -372,6 +374,8 @@ $('.device-form').submit(()=>{
       alert('Có lỗi trong quá trình thêm. Vui lòng liên hệ kỹ thuật để được hỗ trợ!');
     }
   }).fail((response)=>{
+    console.log("fail");
+    console.log(response);
     alert('Có lỗi trong quá trình thêm. Vui lòng liên hệ kỹ thuật để được hỗ trợ!');
   });
 

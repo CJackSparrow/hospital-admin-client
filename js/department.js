@@ -1,4 +1,4 @@
-const domain = "http://localhost:6969/api/";
+const domain = "http://171.244.4.48:6969/api/";
 var responseList = null;
 var page = 0;
 

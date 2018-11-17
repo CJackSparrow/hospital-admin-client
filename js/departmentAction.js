@@ -93,40 +93,76 @@ function onOpenAddDepartment() {
   $('.save-department-button').show();
 }
 
-// $('.department-form').submit(()=>{
-//   console.log("onSubmit");
+$('#save-department-form').submit((e)=>{
+  e.preventDefault();
+  console.log("onSubmit");
 
-  // var department = JSON.stringify({
-  //   'id' : $('.department-id').val(),
-  //   'code' : $('.department-code').val(),
-  //   'name' : $('.department-name').val(),
-  //   'manager' : $('.department-manager').val(),
-  //
-  // });
-  // console.log(department);
-  //
-  //
-  // var settings = {
-  //   "crossDomain": true,
-  //   "url": domain+"/department/save",
-  //   "method": "POST",
-  //   "headers": {
-  //     "Content-Type": "application/json",
-  //   },
-  //   "data": department
-  // }
-  //
-  // $.ajax(settings).done(function (response) {
-  //   console.log("ajax");
-  //   console.log(response);
-  //   if(response.toUpperCase() == 'SUCCESS'){
-  //     alert('Lưu thành công!');
-  //     $('.btn-close-detail').click();
-  //     getDevices();
-  //   }else{
-  //     alert('Có lỗi trong quá trình thêm. Vui lòng liên hệ kỹ thuật để được hỗ trợ!');
-  //   }
-  // }).fail((response)=>{
-  //   alert('Có lỗi trong quá trình thêm. Vui lòng liên hệ kỹ thuật để được hỗ trợ!');
-  // });
-// });
+  var department = JSON.stringify({
+    'id' : $('.department-id').val(),
+    'code' : $('.department-code').val(),
+    'name' : $('.department-name').val(),
+    'manager' : $('.department-manager').val(),
+
+  });
+  console.log(department);
+
+
+  var settings = {
+    "crossDomain": true,
+    "url": domain+"/department/save",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "data": department
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log("ajax");
+    console.log(response);
+    if(response.toUpperCase() == 'SUCCESS'){
+      alert('Lưu thành công!');
+      $('.btn-close-detail').click();
+      getDepartment();
+    }else{
+      alert('Có lỗi trong quá trình thêm. Vui lòng liên hệ kỹ thuật để được hỗ trợ!');
+    }
+  }).fail((response)=>{
+    alert('Có lỗi trong quá trình thêm. Vui lòng liên hệ kỹ thuật để được hỗ trợ!');
+  });
+});
+
+function onSearchDepartment(){
+  console.log('onSearch');
+  var searchValue = $(".search-department").val();
+  if(!searchValue){
+    getDepartment();
+  }
+  var searchType = $(".search-type option:selected").val();
+
+  const url = domain+'/department/search?page=0&size=15&'+searchType+'='+searchValue;
+  console.log(url);
+  var request = new Request(url, {
+    method: 'GET',
+    headers: new Headers()
+  })
+
+  fetch(request).then(function (response) {
+    if (response.ok) {
+      return response.json()
+    }
+    throw new Error('(onSearchDepartment)ERROR')
+  }).then(function (json) {
+    if(json.content){
+      console.log(json.content);
+      loadListDepartment(json.content);
+    }
+
+  })
+}
+
+function onEdit(input) {
+  console.log("onEdit: "+input);
+  $('.'+input).prop("disabled", false);
+  $('.save-department-button').show();
+}

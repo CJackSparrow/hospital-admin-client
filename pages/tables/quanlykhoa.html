@@ -62,7 +62,7 @@
           <img src="../../dist/img/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Trần Tiến</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -71,7 +71,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="quanlythietbi.html">
+          <a href="../../index.html">
             <i class="fa fa-th"></i> <span>Quản lý thiết bị</span>
           </a>
       </li>
@@ -133,7 +133,7 @@
                         <div class="input-group input-group-sm" style="width: 150px;">
                           <input type="text" name="table_search" class="form-control pull-right btn-search search-department" placeholder="Tìm kiếm">
                           <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default btn-search" onclick="onSearch()"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-default btn-search" onclick="onSearchDepartment()"><i class="fa fa-search"></i></button>
                           </div>
                         </div>
                       </li>
@@ -180,7 +180,8 @@
                 <span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title">Chi tiết khoa</h4>
             </div>
-            <form class="department-form">
+
+            <form id="save-department-form">
             <div class="modal-body">
               <input type="number" class="form-control department-info department-id" style="display: none">
 
@@ -208,7 +209,6 @@
               <button type="submit" style="display:none" class="btn btn-primary save-department-button">Lưu</button>
             </div>
             </form>
-
           </div>
           <!-- /.modal-content -->
         </div>
